@@ -33,7 +33,7 @@ cat readme
 
 **What it teaches:** Basic SSH login and the two most fundamental Linux commands — `ls` (list files) and `cat` (print file contents).
 
-**Password for bandit1:** `6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR`
+**Password for bandit1:** `<redacted>`
 
 ---
 
@@ -47,7 +47,7 @@ cat ./-
 
 **What it teaches:** A bare `-` is normally interpreted by many commands as "read from stdin", so `cat -` alone would hang. Prefixing the filename with `./` forces the shell to treat it as a relative path instead.
 
-**Password for bandit2:** `PK8fYLZg2hnHSz83plBL1iEPKdD3QToB`
+**Password for bandit2:** `<redacted>`
 
 ---
 
@@ -61,7 +61,7 @@ cat "spaces in this filename"
 
 **What it teaches:** Filenames containing spaces must be quoted or have each space escaped with a backslash, otherwise the shell treats them as separate arguments.
 
-**Password for bandit3:** `7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME`
+**Password for bandit3:** `<redacted>`
 
 ---
 
@@ -77,7 +77,7 @@ cat .hidden
 
 **What it teaches:** Files/directories starting with a dot are "hidden" from a plain `ls` and require the `-a` (all) flag to be shown.
 
-**Password for bandit4:** `xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq`
+**Password for bandit4:** `<redacted>`
 
 ---
 
@@ -93,7 +93,7 @@ cat ./-file07
 
 **What it teaches:** The `file` command inspects actual file content/type rather than trusting the filename, which is critical since filenames can be misleading.
 
-**Password for bandit5:** `6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG`
+**Password for bandit5:** `<redacted>`
 
 ---
 
@@ -107,7 +107,7 @@ find . -type f -size 1033c ! -executable
 
 **What it teaches:** `find` can filter by size (`-size`), permissions (`-executable`/`-perm`), and type, which is far more efficient than manually browsing a large directory tree.
 
-**Password for bandit6:** `pXa26xhMWaC2SvDotA4r9EgZkulOeSBW`
+**Password for bandit6:** `<redacted>`
 
 ---
 
@@ -121,7 +121,7 @@ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 
 **What it teaches:** `find` can search from the filesystem root, and redirecting stderr (`2>/dev/null`) hides "Permission denied" noise from directories you can't access.
 
-**Password for bandit7:** `Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3`
+**Password for bandit7:** `<redacted>`
 
 ---
 
@@ -135,7 +135,7 @@ grep millionth data.txt
 
 **What it teaches:** `grep` searches text for a pattern — an essential tool for filtering large files down to relevant lines.
 
-**Password for bandit8:** `VR1ljMayciFxbnUokuQmJFw6QC9VKtub`
+**Password for bandit8:** `<redacted>`
 
 ---
 
@@ -149,7 +149,7 @@ sort data.txt | uniq -u
 
 **What it teaches:** `uniq` only detects duplicates in *adjacent* lines, so the input must be `sort`-ed first; `-u` then prints only unique (non-repeated) lines.
 
-**Password for bandit9:** `EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl`
+**Password for bandit9:** `<redacted>`
 
 ---
 
@@ -163,7 +163,7 @@ strings data.txt | grep '='
 
 **What it teaches:** `strings` extracts printable text from binary data, and piping it into `grep` narrows down the noise to the exact pattern you're looking for.
 
-**Password for bandit10:** `B0s2khmbT9u0geKuOoVGW3JZKhndE3BG`
+**Password for bandit10:** `<redacted>`
 
 ---
 
@@ -177,7 +177,7 @@ base64 -d data.txt
 
 **What it teaches:** Base64 is a common, easily reversible text-encoding scheme, not encryption — decoding it requires no secret key.
 
-**Password for bandit11:** `pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro`
+**Password for bandit11:** `<redacted>`
 
 ---
 
@@ -191,7 +191,7 @@ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 
 **What it teaches:** `tr` translates characters one-for-one, letting you implement simple substitution ciphers like ROT13 directly on the command line.
 
-**Password for bandit12:** `GROozWPO8QyN0mGrjUkID0WCYkZiQxrN`
+**Password for bandit12:** `<redacted>`
 
 ---
 
@@ -212,7 +212,7 @@ tar xf file.tar
 
 **What it teaches:** `xxd -r` reverses a hex dump back into raw binary; `file` identifies the actual compression format so you can pick the right decompression tool; some files are wrapped in several layers, requiring the process to be repeated.
 
-**Password for bandit13:** `qQYQiHOBPR8zR61qxYqX45quvihF2uzk`
+**Password for bandit13:** `<redacted>`
 
 ---
 
@@ -243,7 +243,7 @@ nc localhost 30000
 
 **What it teaches:** Interacting with a raw TCP service using `nc` (netcat), and the idea of a simple password-based challenge/response service.
 
-**Password for bandit15:** `aaWecNkG4FhxJQxz07uiwzVP6bJiYS65`
+**Password for bandit15:** `<redacted>`
 
 ---
 
@@ -258,8 +258,8 @@ openssl s_client -connect localhost:30001 -quiet
 
 **What it teaches:** Not all network services are plaintext; `openssl s_client` lets you manually speak TLS to a server the same way `nc` speaks plain TCP.
 
-**Password for bandit16:** `pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7`
-**Additional value obtained:** `kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V`
+**Password for bandit16:** `<redacted>`
+**Additional value obtained:** `<redacted>`
 
 ---
 
@@ -289,7 +289,7 @@ diff passwords.old passwords.new
 
 **What it teaches:** `diff` quickly highlights differences between two versions of a file, which is invaluable for spotting a single changed line among thousands.
 
-**Password for bandit18:** `OQxXZjELndr90zuhOTDYBEomI0SZITXI`
+**Password for bandit18:** `<redacted>`
 
 ---
 
@@ -303,7 +303,7 @@ ssh -p 2220 bandit18@bandit.labs.overthewire.org "cat readme"
 
 **What it teaches:** SSH can execute a single remote command non-interactively, which bypasses login scripts that only run for interactive shells.
 
-**Password for bandit19:** `KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI`
+**Password for bandit19:** `<redacted>`
 
 ---
 
@@ -317,7 +317,7 @@ ssh -p 2220 bandit18@bandit.labs.overthewire.org "cat readme"
 
 **What it teaches:** setuid binaries run with the permissions of their *owner* rather than the user executing them — a common privilege-escalation mechanism (and a common misconfiguration risk) in Linux.
 
-**Password for bandit20:** `4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA`
+**Password for bandit20:** `<redacted>`
 
 ---
 
@@ -333,7 +333,7 @@ nc -l -p <local_port> &
 
 **What it teaches:** Setting up your own listener with `nc -l` and having a privileged process connect to it, combining networking with local privilege boundaries.
 
-**Password for bandit21:** `bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY`
+**Password for bandit21:** `<redacted>`
 
 ---
 
@@ -349,7 +349,7 @@ cat /tmp/<output_file_referenced_in_script>
 
 **What it teaches:** Reading scheduled tasks (`cron`) to understand what automated jobs run as which users — a common way privileged information leaks on real systems.
 
-**Password for bandit22:** `RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz`
+**Password for bandit22:** `<redacted>`
 
 ---
 
@@ -367,7 +367,7 @@ cat /tmp/<computed_filename>
 
 **What it teaches:** Understanding a shell script well enough to reproduce its logic by hand, rather than just running it.
 
-**Password for bandit23:** `gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw`
+**Password for bandit23:** `<redacted>`
 
 ---
 
@@ -388,7 +388,7 @@ cat /tmp/myoutput_bandit23
 
 **What it teaches:** A world-writable cron spool directory is a serious misconfiguration — dropping your own script there lets you run arbitrary code as another user.
 
-**Password for bandit24:** `hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv`
+**Password for bandit24:** `<redacted>`
 
 ---
 
@@ -405,7 +405,7 @@ cat /tmp/pins.txt | nc localhost <port>
 
 **What it teaches:** Simple brute-force enumeration when the search space is small (10,000 combinations), and piping generated input directly into `nc`.
 
-**Password for bandit25:** `SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P`
+**Password for bandit25:** `<redacted>`
 
 ---
 
@@ -424,7 +424,7 @@ ssh -i bandit26.sshkey -p 2220 bandit26@bandit.labs.overthewire.org
 
 **What it teaches:** Restricted shells only limit what you type directly — if they invoke a full-featured program like a pager or editor internally, that program's own escape hatches (like vi's `:shell`) can break out of the restriction entirely. This is a classic "shell escape" technique still relevant in real-world restricted environments.
 
-**Password for bandit27:** `STJLJBRRphMxKB392CT4iOr5CbzPU9ER`
+**Password for bandit27:** `<redacted>`
 
 ---
 
@@ -439,7 +439,7 @@ cat repo/README
 
 **What it teaches:** Basic Git usage (`git clone`) and the idea that sensitive data can live in version-controlled repositories, not just plain files.
 
-**Password for bandit28:** `y8Yd2ssKcpHpud7UvOSOxwamRMzIGIeQ`
+**Password for bandit28:** `<redacted>`
 
 ---
 
@@ -453,7 +453,7 @@ git log -p
 
 **What it teaches:** Git history preserves everything that was ever committed; deleting content in a new commit does *not* erase it from the repository's history — an important lesson about accidentally committing secrets.
 
-**Password for bandit29:** `Em7eGtqaMySwNFjCpwzzHhLhospOcdt0`
+**Password for bandit29:** `<redacted>`
 
 ---
 
@@ -469,7 +469,7 @@ cat README
 
 **What it teaches:** Branches can hold entirely different file contents, and sensitive data can hide outside of the default/main branch.
 
-**Password for bandit30:** `jq9Dfg2rXsfYsWMgFuKlXhphjdH7USgX`
+**Password for bandit30:** `<redacted>`
 
 ---
 
@@ -484,7 +484,7 @@ git show <tag-name>
 
 **What it teaches:** Tags are another Git object type that can carry hidden data (e.g. in annotated tag messages), separate from branches and commits.
 
-**Password for bandit31:** `82NkymblpGBYmIXG6ZQ8YldBYstHpfUf`
+**Password for bandit31:** `<redacted>`
 
 ---
 
@@ -501,7 +501,7 @@ git push
 
 **What it teaches:** `.gitignore` only prevents *accidental* additions — `git add -f` (force) overrides it, showing that ignore rules are not a security boundary.
 
-**Password for bandit32:** `pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT`
+**Password for bandit32:** `<redacted>`
 
 ---
 
